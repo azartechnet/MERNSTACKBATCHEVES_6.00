@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div>First div element</div>
+        <div>Second div element</div>
+        <div>Third div element</div>
+        <p>First Para tag</p>
+        <script>
+            var divElements=document.getElementsByTagName('div')
+
+            for(var i=0;i<divElements.length;i++)
+            {
+                console.log(divElements[i].textContent)
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <form id="myform">
+            <input type="text" name="username"value="azar"/>
+            <input type="text" name="username"value="mohamed"/>
+            <input type="text" name="password"value="azar@123"/>
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            var usernameElements=document.getElementsByName('username');
+            for (var i=0;i<=usernameElements.length;i++)
+            {
+                console.log(usernameElements[i].value)
+            }
+            if(usernameElements.length>0)
+            {
+                usernameElements[0].value='Modifed';
+            }
+
+        </script>
+    </body>
+</html>
