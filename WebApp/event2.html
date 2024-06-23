@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        Enter Your name is::<input type="text" id="fname" onblur="myfun1()"/>
+        <script>
+            function myfun1(){
+                var x=document.getElementById("fname").value;
+                if(x==""){
+                    alert("Please Enter Your Name");
+                    }
+                    else{
+                        alert("Welcome "+x);
+                        }
+                        }
+        </script>
+    </body>
+</html>
