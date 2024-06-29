@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <p id="d1"></p>
+        <script>
+            const emp = new Set(["a1", "a1", "a2", "a3"]);
+            
+            // Convert set entries to an array and then to a string for display
+            const empArray = Array.from(emp).join(', ');
+            
+            document.getElementById("d1").textContent = "This set has " + emp.size + " values: " + empArray;
+        </script>
+    </body>
+</html>

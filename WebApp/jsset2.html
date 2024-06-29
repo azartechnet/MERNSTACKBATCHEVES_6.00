@@ -1,0 +1,51 @@
+<body>
+    <p id="d1"></p>
+    <script>
+        const emp = new Set();
+
+        emp.add("a")
+        emp.add("b")
+        emp.add("c")
+        emp.add("d")
+        emp.add("e")
+        emp.add("f")
+
+        //Display the data
+
+        //  document.getElementById("d1").innerHTML=emp;
+
+        for (const x of emp) {
+            document.getElementById("d1").innerHTML += x;
+        }
+
+        //has
+        document.getElementById("d1").innerHTML += emp.has("a");
+
+        //List all the entries
+
+        for (const x of emp) {
+            document.getElementById("d1").innerHTML += x;
+        }
+
+        //get all the values
+        document.getElementById("d1").innerHTML += emp.values();
+
+        //keys
+
+        document.getElementById("d1").innerHTML += emp.keys();
+
+        //entries
+
+        document.getElementById("d1").innerHTML += emp.entries();
+
+        //Reference
+        const a = new Set();
+        a.add('1');
+        a.add('2');
+        a.add('3');
+
+        const b = [...a];
+        console.log(b.join(","));
+        document.getElementById("p1").innerHtml = b.join(",");
+    </script>
+</body>
