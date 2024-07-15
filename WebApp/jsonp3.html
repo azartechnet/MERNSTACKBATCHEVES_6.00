@@ -1,0 +1,18 @@
+<p id="d1"></p>
+<p id="d2"></p>
+<p id="d3"></p>
+<script>
+    const text='["mohamed","azar","mohan"]';
+    const myarr=JSON.parse(text)
+    document.getElementById("d1").innerHTML=myarr[0];
+    document.getElementById("d2").innerHTML=myarr[1];
+    function showData()
+    {
+        let x=document.getElementById("show").value;
+        document.getElementById("d3").innerHTML=myarr[x];
+
+    }
+
+</script>
+<button type="button" onclick="showData()">ShowData</button>
+<input type="number" id="show"/>
