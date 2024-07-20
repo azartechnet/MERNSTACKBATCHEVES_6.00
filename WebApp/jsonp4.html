@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <p id="d1"></p>
+        <script>
+            const obj={name:"azar",age:25,city:"nkl"};
+            //accessing object properties
+            console.log(obj.name);
+            console.log(obj["name"]);
+            //adding new properties
+            obj["address"]="nagpur";
+            console.log(obj);
+            //deleting properties
+            delete obj["address"];
+            console.log(obj);
+            //object methods
+            obj.display=function(){
+                console.log("name:"+this.name);
+                }
+                obj.display();
+                
+        </script>
+    </body>
+</html>
