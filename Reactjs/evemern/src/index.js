@@ -55,10 +55,43 @@ JSX is an extension of the JavaScript language based on ES6, */
 
 //Without JSX
 
-const myelm1=React.createElement('h1',{},"WithoutJSX")
+/*const myelm1=React.createElement('h1',{},"WithoutJSX")
 
 const r1=ReactDOM.createRoot(document.getElementById('root'));
-r1.render(myelm1);
+r1.render(myelm1);*/
+
+//Expression in JSX
+
+/*const myelem=<h1>React is {5+5} time is better</h1>
+const r1=ReactDOM.createRoot(document.getElementById('root'));
+r1.render(myelem);*/
+
+//React List
+
+/*const Myelem=()=>(
+    <ul>
+        <li>React</li>
+        <li>JSX</li>
+        <li>JS</li>
+
+    </ul>
+)
+
+const r1=ReactDOM.createRoot(document.getElementById('root'));
+r1.render(<Myelem/>);*/
+
+//Fragement Tag
+const App=()=>{
+    return(
+       
+        <>
+         <h1>Welcome-1</h1>
+        <h1>Welcome-2</h1>
+        </>  
+    )        
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'));
+r1.render(<App/>);
 
 
 
