@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom/client";
 
 /*const App=()=>{
@@ -272,7 +272,7 @@ r1.render(<Sample/>)*/
 
 //Component Constructor
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
     constructor()
     {
@@ -290,6 +290,111 @@ class Sample extends React.Component
 }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>)
+r1.render(<Sample/>)*/
 
+//Changing the state object
 
+/*class Sample extends React.Component
+{
+    constructor()
+    {
+        super();
+        this.state={
+            emp:{
+                name:"John",
+                age:25,
+                city:"karur"
+            },
+            showData:false
+        };
+    }
+    showData()
+    {
+        this.setState({showData:true});
+    }
+    hideData()
+    {
+        this.setState({showData:false});
+    }
+    render()
+    {
+        let data;
+        if(this.state.showData==true)
+        {
+            data=<div><b>City:</b>{this.state.emp.city}<b>name::</b>{this.state.emp.name}<br/>
+               <button onClick={this.hideData.bind(this)}>HideData</button>
+            </div>
+            
+        }
+        else
+        {
+             data=<div><button onClick={this.showData.bind(this)}>ShowData</button></div>
+        }
+        return(
+            <div>
+                <h1>Welcome</h1>
+                <h2>EmployeeDetails</h2>
+                {data}
+            </div>
+        )
+    }
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//Using Constructor
+
+/*class Header extends Component
+{
+    text="welcome"
+    constructor()
+    {
+        super();
+        this.state={f1:'red'}
+    }
+    render()
+    {
+        return(
+            <div style={{color:this.state.f1}}>
+                <h1>{this.text}</h1>
+            </div>
+        )
+    }
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>)*/
+
+//React Event
+
+/*function Football()
+{
+    const shoot=()=>{
+        alert("Goal Shooted")
+    }
+    return(
+        <div>
+            <button onClick={shoot}>Shoot</button>
+        </div>
+    )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById("root"))
+r1.render(<Football/>)*/
+
+function Football()
+{
+    const shoot=(a)=>{
+        alert("Goal Shooted",a)
+    }
+    return(
+
+        <div>
+            <button onClick={()=>shoot("Goal")}>Shoot</button>
+        </div>
+    )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById("root"))
+r1.render(<Football/>)
