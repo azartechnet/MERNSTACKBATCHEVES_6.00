@@ -449,7 +449,7 @@ const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Garage/>)*/
 
 //React Keys
-function Car(props) {
+/*function Car(props) {
     return <li>I am a { props.brand }</li>;
   }
   
@@ -470,5 +470,128 @@ function Car(props) {
   }
   
   const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(<Garage />);
-  
+  root.render(<Garage />);*/
+
+  //React getDerivedStateFromProps
+
+  /*class Header extends React.Component
+  {
+    
+    constructor(props)
+    {
+        super(props);
+        this.state={count:0};
+    }
+    static getDerivedStateFromProps(props,state)
+    {
+       return {count:props.c1}
+
+    }
+    render()
+    {
+        return <h1>Count: {this.state.count}</h1>;
+        }
+
+  }
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(<Header c1="100"/>);*/
+
+  //ComponentDidMount
+
+  /*class Header extends React.Component
+  {
+     constructor(props)
+     {
+        super(props);
+        this.state={favcolor:"red"};
+     }
+     componentDidMount()
+     {
+        console.log("Component mounted");
+        setTimeout(()=>{
+            this.setState({favcolor:"blue"})
+        },10000)
+     }
+     render()
+     {
+        return(
+            <h1>This is Render Page{this.state.favcolor}</h1>
+        )
+     }
+  }
+
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Header/>)*/
+
+  // setTimeout executes the code only once after the specified delay, 
+//  setInterval executes the code repeatedly at the specified interval.
+//ComponentWillUnmount clears the timer when the component is about to be
+// removed from the DOM to prevent memory leaks
+
+  //Updating-getDerivedStateFromProps
+
+  /*class Header extends Component
+  {
+     constructor(props)
+     {
+        super(props);
+        this.state={favcolor:"red"}
+     }
+     static getDerivedStateFromProps(props,state)
+     {
+        console.log("getDerivedStateFromProps");
+        return {favcolor:props.favcolor};
+     }
+
+     changeColor=()=>{
+
+        this.setState({favcolor:"yellow"})
+     }
+     render()
+     {
+        return(
+            <div>
+
+                <h1>This is Render Page{this.state.favcolor}</h1>
+                <button type="button" onClick={this.changeColor}>Change</button>
+
+            </div>
+        )
+     }
+  }
+
+//    ReactDOM.render(<Header favcolor="green"/>,document.getElementById('root'));
+
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Header favcolor="green"/>)*/
+
+ //Should ComponentUpdate
+
+ class Header extends React.Component
+ {
+    constructor(props)
+    {
+        super(props);
+        this.state={favcolor:"red"}
+    }
+    shouldComponentUpdate()
+    {
+        return true;
+    }
+    changeColor=()=>{
+        this.setState({favcolor:"yellow"})
+    }
+    render()
+    {
+        return(
+            <div>
+  <h1>This is render page{this.state.favcolor}</h1>
+             <button type="button" onClick={this.changeColor}>Change</button>
+            </div>
+        )
+
+    }
+ }
+
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Header/>)
