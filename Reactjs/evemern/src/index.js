@@ -540,7 +540,7 @@ r1.render(<Garage/>)*/
      static getDerivedStateFromProps(props,state)
      {
         console.log("getDerivedStateFromProps");
-        return {favcolor:props.favcolor};
+        return {favcolor:state.favcolor};
      }
 
      changeColor=()=>{
@@ -567,7 +567,7 @@ r1.render(<Garage/>)*/
 
  //Should ComponentUpdate
 
- class Header extends React.Component
+ /*class Header extends React.Component
  {
     constructor(props)
     {
@@ -594,4 +594,75 @@ r1.render(<Garage/>)*/
  }
 
  const r1=ReactDOM.createRoot(document.getElementById('root'))
- r1.render(<Header/>)
+ r1.render(<Header/>)*/
+
+ //React Hooks using useState
+
+ import { useState,useEffect } from "react";
+
+ /*function Counter()
+ {
+    const [count, setCount] = useState(0);
+    
+
+    return(
+        <div>
+            <h1>Count:{count}</h1>
+            <button type="button" onClick={()=>setCount(count+1)}>Increment</button>
+            <button type="button" onClick={()=>setCount(count-1)}>Decrement</button>
+        </div>
+    )
+ }
+
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Counter/>)*/
+
+  /*function Counter()
+  {
+    const [count, setCount] = useState(0);
+    const [name, setName] = useState("Rahul");
+    const [password,setPassword]=useState("123")
+
+    return(
+        <div>
+            <h1>Count:{count}</h1>
+            <h1>Name:{name}</h1>
+            <h1>Password:{password}</h1>
+            <button type="button" onClick={()=>setCount(count+1)}>Increment</button>
+            <button type="button" onClick={()=>setCount(count-1)}>Decrement</button>
+            <button type="button" onClick={()=>setName("Rahul Kumar")}>Change Name</button>
+            <button type="button" onClick={()=>setPassword("1234")}>Change Password</button>
+            </div>
+        
+    )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Counter/>)*/
+
+  //UseEffect
+
+  function Timer()
+  {
+    const [count,setCount]=useState(0);
+    useEffect(()=>
+    {
+        const intervalId=setInterval(()=>
+        {
+            setCount(count+1);
+            },1000);
+            return ()=>
+            {
+                clearInterval(intervalId);
+            }
+            },[count]);
+            return(
+                <div>
+                    <h1>Count:{count}</h1>
+                    <button type="button" onClick={()=>setCount(0)}>Reset</button>
+                    </div>
+                );
+                }
+                const r1=ReactDOM.createRoot(document.getElementById('root'))
+                r1.render(<Timer/>);
+  
+  
