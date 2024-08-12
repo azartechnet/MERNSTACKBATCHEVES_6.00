@@ -641,7 +641,7 @@ r1.render(<Garage/>)*/
 
   //UseEffect
 
-  function Timer()
+  /*function Timer()
   {
     const [count,setCount]=useState(0);
     useEffect(()=>
@@ -663,6 +663,65 @@ r1.render(<Garage/>)*/
                 );
                 }
                 const r1=ReactDOM.createRoot(document.getElementById('root'))
-                r1.render(<Timer/>);
+                r1.render(<Timer/>);*/
+
+//React without useContext
+
+/*function Component1()
+{
+    const [user,setUser]=useState("mohamed");
+    return(
+        <div>
+            <h1>User:{user}</h1>
+            <Component2 user={user}/>
+        </div>
+    )
+}
+function Component2({user})
+{
+    return(
+        <div>
+            <h1>User:{user}</h1>
+            <p>{user}Profile</p>
+        </div>
+    )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Component1/>);*/
+
+//React useContext
+
+import { createContext,useContext } from "react";
+const UserContext=createContext()
+
+function Component1()
+{
+    const [user,setUser]=useState("mohamed");
+    return(
+        <UserContext.Provider value={user}>
+            <div>
+                <h1>User:{user}</h1>
+                <Component2/>
+            </div>
+        </UserContext.Provider>
+        )
+}
+function Component2()
+{
+    const user=useContext(UserContext)
+    return(
+        <div>
+            <h1>User:{user}</h1>
+            <p>{user}Profile</p>
+        </div>
+        )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Component1/>);
+
+
+
   
   
