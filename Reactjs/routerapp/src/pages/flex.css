@@ -1,0 +1,17 @@
+.flex {
+    display: flex;
+    justify-content: space-around; /* Distributes space around each flex item */
+    align-items: center; /* Aligns items vertically in the center */
+    margin-top: 20px; /* Adds some space above the flex container */
+  }
+  
+  .box {
+    width: 150px;
+    height: 150px;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+  
